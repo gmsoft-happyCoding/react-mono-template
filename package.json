@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.5.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start:app": "yarn workspace app run start",
+    "test:app": "yarn workspace app run test",
+    "docz:app": "yarn workspace app run docz:dev",
+    "bad:app": "yarn workspace app run bad",
+    "start:c": "yarn workspace components run start",
+    "test:c": "yarn workspace components run test",
+    "docz:c": "yarn workspace components run docz:dev",
+    "bad:c": "yarn workspace components run bad",
+    "gen:api": "lerna run --stream --progress gen:api"
+  },
+  "resolutions": {
+    "ansi-styles": "^3.2.0"
+  }
+}
