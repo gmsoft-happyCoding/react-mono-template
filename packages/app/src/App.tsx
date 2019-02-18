@@ -6,7 +6,7 @@ import { hot, setConfig } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import styled from 'styled-components';
-import CloudComponent from '@src/components/CloudComponent';
+import CloudComponent from '@/components/CloudComponent';
 
 const { stateContainer } = utils;
 

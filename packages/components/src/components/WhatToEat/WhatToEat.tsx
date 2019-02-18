@@ -1,7 +1,7 @@
-import { Mode } from '@src/enums/Mode';
-import whatToEatActions from '@src/models/whatToEat/whatToEat.action';
-import whatToEatMode from '@src/models/whatToEat/whatToEat.model';
-import { Food } from '@src/types/Food.d';
+import { Mode } from '@/enums/Mode';
+import whatToEatActions from '@/models/whatToEat/whatToEat.action';
+import whatToEatMode from '@/models/whatToEat/whatToEat.model';
+import { Food } from '@/types/Food.d';
 import { Button, Card, Input, Switch } from 'antd';
 import { utils } from 'common';
 import React, { useState } from 'react';
