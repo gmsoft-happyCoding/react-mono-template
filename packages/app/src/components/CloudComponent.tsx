@@ -11,13 +11,12 @@ import * as ReduxSaga from 'redux-saga';
 import * as ReactRouterRedux from 'react-router-redux';
 import * as ReactRedux from 'react-redux';
 import * as ReduxActions from 'redux-actions';
-// @ts-ignore
 import * as DvaCore from 'dva-core';
-// @ts-ignore
 import * as StateContainer from 'state-container';
-// @ts-ignore
 import * as axios from 'axios';
-// @ts-ignore
+import * as Reselect from 'reselect';
+import * as ReactVirtualized from 'react-virtualized';
+import * as reactVirtualizedTree from 'react-virtualized-tree';
 import SystemJS from 'systemjs';
 import Loadable from 'react-loadable';
 import Loading from './Loading';
@@ -38,6 +37,9 @@ SystemJS.set('redux-actions', SystemJS.newModule({ __useDefault: ReduxActions })
 SystemJS.set('dva-core', SystemJS.newModule({ __useDefault: DvaCore }));
 SystemJS.set('state-container', SystemJS.newModule({ __useDefault: StateContainer }));
 SystemJS.set('axios', SystemJS.newModule({ __useDefault: axios }));
+SystemJS.set('reselect', SystemJS.newModule({ __useDefault: Reselect }));
+SystemJS.set('react-virtualized', SystemJS.newModule({ __useDefault: ReactVirtualized }));
+SystemJS.set('react-virtualized-tree', SystemJS.newModule({ __useDefault: reactVirtualizedTree }));
 
 const loadComponent = url =>
   Loadable({
