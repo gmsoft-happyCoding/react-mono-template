@@ -6,7 +6,10 @@ import { hot, setConfig } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import styled from 'styled-components';
-import CloudComponent from '@/components/CloudComponent';
+import CloudComponent, { loadComponent } from '@/components/CloudComponent';
+
+// 通过组件名字 从 registry.gmsoftdev.com 加载
+const WhatToEat = loadComponent({ name: 'test-project/WhatToEat' });
 
 const { stateContainer } = utils;
 
@@ -42,6 +45,9 @@ const App = () => (
           </SubTitle>
           <CloudComponent url="http://localhost:3030/static/js/WhatToEat.js" />
           <CloudComponent url="http://localhost:3030/static/js/WhatToEat.js" defaultMode="search" />
+          <WhatToEat />
+          {/* 通过组件名字 从 registry.gmsoftdev.com 加载 */}
+          <CloudComponent name="test-project/WhatToEat" defaultMode="search" />
         </>
       </Router>
     </Provider>
