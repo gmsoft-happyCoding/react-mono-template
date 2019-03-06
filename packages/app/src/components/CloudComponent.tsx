@@ -17,7 +17,7 @@ import * as Reselect from 'reselect';
 import * as ReactVirtualized from 'react-virtualized';
 import * as reactVirtualizedTree from 'react-virtualized-tree';
 import SystemJS from 'systemjs';
-import { componentRegistry } from '@/api';
+import { api } from 'common';
 import Loading from './Loading';
 
 // 设置被加载组件依赖的公共库
@@ -93,7 +93,7 @@ const createLoader = ({ name, url }: RegistryInfo) => async () => {
       const [projectName, componentName] = name.split('/');
       const {
         data,
-      } = await componentRegistry.api_projects_projectName_components_componentName_url_get({
+      } = await api.componentRegistry.api_projects_projectName_components_componentName_url_get({
         path: {
           projectName,
           componentName,
