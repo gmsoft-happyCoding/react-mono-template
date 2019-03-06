@@ -23,7 +23,7 @@ module.exports = {
   },
   rules: {
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/reactive-deps': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
     'react/forbid-foreign-prop-types': 'error',
     'arrow-parens': ['error', 'as-needed'],
@@ -39,7 +39,7 @@ module.exports = {
     'no-confusing-arrow': 'off',
     'consistent-return': 'off',
     'react/require-default-props': 'off',
-    'no-debugger': 'off',
+    'no-debugger': 'warn',
     'no-plusplus': 'off',
     'flowtype/no-types-missing-file-annotation': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
