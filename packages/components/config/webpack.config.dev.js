@@ -77,6 +77,8 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
   return loaders;
 };
 
+const DEV_BUILD = process.env.DEV_BUILD === 'true';
+
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
 // The production configuration is different and lives in a separate file.
@@ -87,26 +89,10 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   // These are the "entry points" to our application.
   // This means they will be the "root" imports that are included in JS bundle.
-  externals: externals('root'),
-  entry: {
-    // Include an alternative client for WebpackDevServer. A client's job is to
-    // connect to WebpackDevServer by a socket and get notified about changes.
-    // When you save a file, the client will either apply hot updates (in case
-    // of CSS changes), or refresh the page (in case of JS changes). When you
-    // make a syntax error, this client will display a syntax error overlay.
-    // Note: instead of the default WebpackDevServer client, we use a custom one
-    // to bring better experience for Create React App users. You can replace
-    // the line below with these two lines if you prefer the stock client:
-    // require.resolve('webpack-dev-server/client') + '?/',
-    // require.resolve('webpack/hot/dev-server'),
-    // webpackHotDevClient: require.resolve('react-dev-utils/webpackHotDevClient'),
-    // Finally, this is your app's code:
-    index: [webpackHotDevClient, paths.appIndexJs],
-    // We include the app code last so that if there is a runtime error during
-    // initialization, it doesn't blow up the WebpackDevServer client, and
-    // changing JS code would still trigger a refresh.
-    ...exportComponents,
-  },
+  externals: externals(DEV_BUILD ? 'root' : 'var'),
+  entry: DEV_BUILD
+    ? { ...exportComponents }
+    : [require.resolve('react-dev-utils/webpackHotDevClient'), paths.appIndexJs].filter(Boolean),
   output: {
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true,
@@ -121,7 +107,7 @@ module.exports = {
     // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
       path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
-    libraryTarget: 'umd',
+    libraryTarget: DEV_BUILD ? 'umd' : 'var',
   },
   optimization: {
     // Automatically split vendor and commons

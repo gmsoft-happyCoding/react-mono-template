@@ -69,6 +69,11 @@ REACT_APP_DEPLOY_SERVERS
 ### `yarn start:c`
 
 启动 components 项目开发调试, 默认端口 3030
+(需调试的组件请在 src/App.tsx 中 import)
+
+### `yarn dev-build:c`
+
+启动 components 项目的开发构建, 构建出独立的组件 bundle, 用于在 app 或其他项目中集成调试
 
 ### `yarn test:c`
 

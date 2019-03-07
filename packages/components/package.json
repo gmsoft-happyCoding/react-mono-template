@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "cross-env PORT=3030 node --max_old_space_size=6144 scripts/start.js",
+    "dev-build": "cross-env PORT=3030 DEV_BUILD=true node --max_old_space_size=6144 scripts/start.js",
     "test": "node scripts/test.js",
     "docz:dev": "docz dev",
     "gen:meta": "node scripts/gen-meta.js",

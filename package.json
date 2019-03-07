@@ -12,6 +12,7 @@
     "docz:app": "yarn workspace app run docz:dev",
     "bad:app": "yarn workspace app run bad",
     "start:c": "yarn workspace components run start",
+    "dev-build:c": "yarn workspace components run dev-build",
     "test:c": "yarn workspace components run test",
     "docz:c": "yarn workspace components run docz:dev",
     "bad:c": "yarn workspace components run bad",
