@@ -17,8 +17,6 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
     'react/forbid-foreign-prop-types': 'error',
-    'import/no-unresolved': 'off',
-    // 'react/prop-types': 'off',
     'react/prefer-stateless-function': 'warn',
     'arrow-parens': ['error', 'as-needed'],
     'no-unused-vars': 'off',
