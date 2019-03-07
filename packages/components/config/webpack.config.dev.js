@@ -91,8 +91,8 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   externals: externals(DEV_BUILD ? 'root' : 'var'),
   entry: DEV_BUILD
-    ? { ...exportComponents }
-    : [require.resolve('react-dev-utils/webpackHotDevClient'), paths.appIndexJs].filter(Boolean),
+    ? { webpackHotDevClient, ...exportComponents }
+    : [webpackHotDevClient, paths.appIndexJs].filter(Boolean),
   output: {
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true,
