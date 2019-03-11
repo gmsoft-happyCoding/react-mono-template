@@ -39,7 +39,7 @@ interface OwnProps {
    * 模式 -
    * 组件mount后, 可通过 mode 改变组件模式
    */
-  mode: 'draw' | 'search';
+  mode?: 'draw' | 'search';
 }
 
 interface StateProps {
@@ -94,7 +94,7 @@ export const WhatToEat = (props: Props) => {
 
 WhatToEat.defaultProps = {
   defaultMode: Mode.DRAW,
-} as OwnProps;
+};
 
 const mapStateToProps = ({ whatToEat }: any) => ({ food: whatToEat });
 
