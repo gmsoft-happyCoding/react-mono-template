@@ -24,6 +24,7 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const externals = require('./externals');
 const { packageSrcAbsPaths } = require('./packages');
+const systemModules = require('./systemModules');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -427,6 +428,9 @@ const webpackConfig = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+      templateParameters: {
+        systemModules,
+      },
       minify: {
         removeComments: true,
         collapseWhitespace: true,
