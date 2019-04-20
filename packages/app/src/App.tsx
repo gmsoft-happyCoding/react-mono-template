@@ -37,7 +37,7 @@ const App = () => (
         <>
           <Title>这是一个从 packages/compoments 项目远程加载的组件</Title>
           <SubTitle>
-            如果你没有看到任何内容, 请检查 compoments 项目是否启动 <b>yarn start:c</b>
+            如果你没有看到任何内容, 请检查 compoments 项目是否启动 <b>yarn dev-build:c</b>
           </SubTitle>
           <SubTitle>
             如果你是第一次看到该模板, 建议你先阅读一下项目根目录的 README.md
