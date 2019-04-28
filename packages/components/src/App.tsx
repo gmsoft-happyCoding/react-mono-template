@@ -1,5 +1,3 @@
-import { LocaleProvider } from 'antd';
-import zhCN from 'antd/lib/locale-provider/zh_CN';
 import { utils } from 'common';
 import React from 'react';
 import { hot, setConfig } from 'react-hot-loader';
@@ -11,13 +9,11 @@ import { Mode } from './enums/Mode';
 const { stateContainer } = utils;
 
 const App = () => (
-  <LocaleProvider locale={zhCN}>
-    <Provider store={stateContainer._store}>
-      <Router history={stateContainer._history}>
-        <WhatToEat defaultMode={Mode.DRAW} />
-      </Router>
-    </Provider>
-  </LocaleProvider>
+  <Provider store={stateContainer._store}>
+    <Router history={stateContainer._history}>
+      <WhatToEat defaultMode={Mode.DRAW} />
+    </Router>
+  </Provider>
 );
 
 // @ts-ignore
