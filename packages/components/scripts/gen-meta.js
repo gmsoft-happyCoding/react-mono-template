@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const { mapValues, forEach, flowRight: compose } = require('lodash');
 
 const paths = require('../config/paths');
-const exportComponents = require('../config/exportComponents');
+const exportComponents = require('../config/_exportComponents');
 
 /**
  * 排除 redux 注入的 props 和 第三方库的props
@@ -31,7 +31,7 @@ const docgen = require('react-docgen-typescript').withCustomConfig(paths.appTsCo
  */
 const flagWorkflowProps = meta => {
   const flag = '@workflow';
-  const props = mapValues(meta.props, prop => {
+  const props = mapValues(meta && meta.props, prop => {
     if (prop.description.includes(flag)) {
       return {
         ...prop,
@@ -54,7 +54,7 @@ const flagWorkflowProps = meta => {
  */
 const flagWorkflowComponent = meta => {
   const flag = '@workflow';
-  if (meta.description.includes(flag)) {
+  if (meta && meta.description && meta.description.includes(flag)) {
     return { ...meta, description: meta.description.replace(flag, ''), workflowFlag: true };
   }
 
