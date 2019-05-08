@@ -4,7 +4,9 @@ const chalk = require('chalk');
 const { mapValues, forEach, flowRight: compose } = require('lodash');
 
 const paths = require('../config/paths');
-const exportComponents = require('../config/_exportComponents');
+const exportComponents = process.env.PICK_EXPORT_COMPONENTS
+  ? JSON.parse(process.env.PICK_EXPORT_COMPONENTS)
+  : require('../config/exportComponents');
 
 /**
  * 排除 redux 注入的 props 和 第三方库的props

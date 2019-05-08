@@ -7,13 +7,13 @@ const inquirer = require('inquirer');
 const { pick, isEmpty } = require('lodash');
 const exportComponents = require('../config/exportComponents');
 
-function wirteFile(pickKeys) {
+function wirteFile(pickComponents) {
   const _exportComponents = `
 /**
  * 此文件是脚本生成的, 请不要编辑或签入 svn 或 git
  * 想要修改导出哪些组件, 请编辑 exportComponents.js
  */
-module.exports = ${JSON.stringify(pick(exportComponents, pickKeys), null, 2)}
+module.exports = ${JSON.stringify(pick(exportComponents, pickComponents), null, 2)}
 `;
 
   fs.writeFileSync(path.join(__dirname, '..', 'config', '_exportComponents.js'), _exportComponents);
@@ -26,24 +26,24 @@ function genEC() {
       const questions = [
         {
           type: 'checkbox',
-          name: 'components',
-          message: '请选择你想要发布的组件?',
+          name: 'pickComponents',
+          message: `请选择你想要${process.env.NODE_ENV === 'development' ? '调试' : '发布'}的组件?`,
           choices: Object.keys(exportComponents),
           pageSize: 10,
-          validate: components => {
-            if (isEmpty(components)) return '请选择要发布的组件';
+          validate: pickComponents => {
+            if (isEmpty(pickComponents)) return '请选择要发布的组件';
             return true;
           },
         },
       ];
 
-      inquirer.prompt(questions).then(({ components }) => {
-        wirteFile(components);
-        resolve();
+      inquirer.prompt(questions).then(({ pickComponents }) => {
+        wirteFile(pickComponents);
+        resolve(pick(exportComponents, pickComponents));
       });
     } else {
       wirteFile(Object.keys(exportComponents));
-      resolve();
+      resolve(exportComponents);
     }
   });
 }
