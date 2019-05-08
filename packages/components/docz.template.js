@@ -37,6 +37,9 @@ const scripts = [
 ];
 
 const html = `
+<!--
+此文件是脚本生成的, 请不要编辑或签入 svn 或 git
+-->
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -52,8 +55,8 @@ const html = `
   <body>
     ${links.map(link => `<link href="${cdnServer}/${link}" rel="stylesheet" />`).join('\n')}
     ${scripts
-    .map(script => `<script crossorigin="anonymous" src="${cdnServer}/${script}"></script>`)
-    .join('\n')}
+      .map(script => `<script crossorigin="anonymous" src="${cdnServer}/${script}"></script>`)
+      .join('\n')}
     <div id="root"></div>
     {{ footer }}
   </body>
