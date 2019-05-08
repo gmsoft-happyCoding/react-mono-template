@@ -24,8 +24,9 @@ function loadEnvFile(whichDeploy) {
 }
 
 function load() {
+  const args = require('gar')(process.argv.slice(2));
   // 尝试从命令行参数中获取 发布目标环境
-  const whichDeploy = process.argv[2];
+  const whichDeploy = args['_'] && args['_'][0];
   /**
    * 从参数中获取了有效的目标名称直接使用
    * 否则询问需要发布到哪里?

@@ -19,7 +19,7 @@ const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const externals = require('./externals');
 const { packageSrcAbsPaths } = require('./packages');
-const exportComponents = require('./exportComponents');
+const exportComponents = require('./_exportComponents');
 
 const webpackHotDevClient = require.resolve('react-dev-utils/webpackHotDevClient');
 

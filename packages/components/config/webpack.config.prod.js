@@ -24,7 +24,7 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const externals = require('./externals');
 const { packageSrcAbsPaths } = require('./packages');
-const exportComponents = require('./exportComponents');
+const exportComponents = require('./_exportComponents');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -118,10 +118,7 @@ const webpackConfig = {
   devtool: shouldUseSourceMap ? 'source-map' : false,
   externals: externals('root'),
   // In production, we only want to load the app code.
-  entry: {
-    index: paths.appIndexJs,
-    ...exportComponents,
-  },
+  entry: exportComponents,
   output: {
     // The build folder.
     path: paths.appBuild,

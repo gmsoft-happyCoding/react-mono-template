@@ -77,3 +77,4 @@ typings/
 build/
 .docz/
 index.docz.html
+packages/components/config/_exportComponents.js

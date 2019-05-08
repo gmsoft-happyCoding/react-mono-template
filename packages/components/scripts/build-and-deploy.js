@@ -8,6 +8,7 @@ const child_process = require('child_process');
 const chalk = require('chalk');
 const paths = require('../config/paths');
 const loadDeployEnv = require('./utils/load-deploy-env');
+const genEC = require('./gen-ec');
 
 function printSegment(title) {
   console.log(chalk.magenta(`---------------------------${title}---------------------------`));
@@ -17,9 +18,13 @@ function buildAndDeploy(whichDeploy) {
   // project build
   printSegment('project build');
   child_process.execSync('yarn build', { stdio: 'inherit' });
+
   // docz build
-  printSegment('docz build');
-  child_process.execSync('docz build', { stdio: 'inherit' });
+  const args = require('gar')(process.argv.slice(2));
+  if (!args['no-doc']) {
+    printSegment('docz build');
+    child_process.execSync('docz build', { stdio: 'inherit' });
+  }
   // gen:meta
   printSegment('gen meta');
   child_process.execSync('yarn gen:meta', { stdio: 'inherit' });
@@ -29,6 +34,7 @@ function buildAndDeploy(whichDeploy) {
 }
 
 async function run() {
+  await genEC();
   const whichDeploy = await loadDeployEnv();
   buildAndDeploy(whichDeploy);
 }

@@ -33,7 +33,9 @@
 
 docz 是什么? 详见: https://www.docz.site/documentation
 
-### `yarn bad:app`
+### `yarn bad:app [env]`
+
+* `env` - (可选参数) 指定发布环境
 
 编译&发布(build and deploy) app 项目
 发布信息可以通过以下环境变量(在此目录 app/env 对应的配置文件中)配置:
@@ -86,9 +88,15 @@ REACT_APP_DEPLOY_SERVERS
 
 docz 是什么? 详见: https://www.docz.site/documentation
 
-### `yarn bad:c`
+### `yarn bad:c [env] [-p | --pick] [--no-doc]`
 
-请看上面的 `yarn run bad:app` 描述
+* `env` - (可选参数) 指定发布环境
+
+* `-p | --pick` - (可选参数) (从`packages\components\config\exportComponents.js`中)手动选择需要发布的组件
+
+* `--no-doc` - (可选参数) 不生成docz文档
+
+其他详情, 请看上面的 `yarn run bad:app` 描述
 
 ### `yarn gen:api`
 
