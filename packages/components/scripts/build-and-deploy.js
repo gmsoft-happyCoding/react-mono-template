@@ -44,7 +44,7 @@ async function run() {
   process.env.PICK_EXPORT_COMPONENTS = JSON.stringify(exportComponents);
 
   const whichDeploy = await loadDeployEnv();
-  buildAndDeploy(whichDeploy, exportComponents);
+  buildAndDeploy(whichDeploy);
 }
 
 run();
