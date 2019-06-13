@@ -3,3 +3,4 @@
 /packages/*/doczrc.js
 /packages/*/docz.template.js
 /packages/*/babel.config.js
+/packages/*/build
