@@ -1,6 +1,6 @@
 import { utils } from 'common';
 import React from 'react';
-import { hot, setConfig } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import WhatToEat from './components/WhatToEat';
@@ -16,6 +16,4 @@ const App = () => (
   </Provider>
 );
 
-// @ts-ignore
-setConfig({ pureSFC: true });
-export default hot(module)(App);
+export default hot(App);
