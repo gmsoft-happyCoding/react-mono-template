@@ -302,7 +302,7 @@ const webpackConfig = {
             options: {
               rootMode: 'upward',
               customize: require.resolve('babel-preset-react-app/webpack-overrides'),
-
+              presets: ['react-app'],
               plugins: [
                 [
                   require.resolve('babel-plugin-named-asset-import'),

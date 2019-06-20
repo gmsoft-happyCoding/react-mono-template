@@ -1,8 +1,5 @@
-import utils from './utils/index';
+import * as utils from './utils/index';
 import * as api from './api';
+import * as constant from './constant';
 
-const common = { utils, api };
-
-export { utils, api };
-
-export default common;
+export { utils, api, constant };
