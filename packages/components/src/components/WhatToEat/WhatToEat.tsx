@@ -1,16 +1,17 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mode } from '@/enums/Mode';
-import * as whatToEatActions from '@/models/whatToEat/whatToEat.action';
+import * as whatToEatActions from '@/models/whatToEat/whatToEat.actions';
 import whatToEatMode, { WhatToEatState, WHAT_TO_EAT } from '@/models/whatToEat/whatToEat.model';
 import { Button, Card, Input, Switch } from 'antd';
-import { utils } from 'common';
-import { useSelector, useDispatch } from 'react-redux';
+import { utils, hooks } from 'common';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Cover from './Cover';
 
 const { Search } = Input;
 
 const { stateContainer } = utils;
+const { useActions } = hooks;
 
 stateContainer.injectModel(whatToEatMode);
 
@@ -60,23 +61,13 @@ const WhatToEat = (props: Props) => {
     setMode(checked ? Mode.SEARCH : Mode.DRAW);
   };
 
-  const dispatch = useDispatch();
-
-  const draw = useCallback(() => {
-    dispatch(whatToEatActions.draw);
-  }, [dispatch]);
-
-  const search = useCallback(
-    keyWords => {
-      dispatch(whatToEatActions.search(keyWords));
-    },
-    [dispatch]
-  );
+  const { draw, search } = useActions(whatToEatActions);
 
   return (
     <FoodCard
       actions={[
         mode === Mode.DRAW ? (
+          // @ts-ignore
           <Button type="primary" block onClick={draw}>
             Let me see
           </Button>
