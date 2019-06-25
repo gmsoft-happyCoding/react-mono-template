@@ -3,7 +3,8 @@ import { Mode } from '@/enums/Mode';
 import * as whatToEatActions from '@/models/whatToEat/whatToEat.actions';
 import whatToEatMode, { WhatToEatState, WHAT_TO_EAT } from '@/models/whatToEat/whatToEat.model';
 import { Button, Card, Input, Switch } from 'antd';
-import { utils, hooks } from 'common';
+import { utils } from 'common';
+import { useActions } from 'gm-react-hanger';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Cover from './Cover';
@@ -11,7 +12,6 @@ import Cover from './Cover';
 const { Search } = Input;
 
 const { stateContainer } = utils;
-const { useActions } = hooks;
 
 stateContainer.injectModel(whatToEatMode);
 

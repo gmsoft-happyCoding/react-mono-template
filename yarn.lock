@@ -8153,6 +8153,11 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+gm-react-hanger@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/gm-react-hanger/download/gm-react-hanger-2.0.0.tgz#54b11901b4dbcb258cc03713fa338484fc31fc0f"
+  integrity sha1-VLEZAbTbyyWMwDcT+jOEhPwx/A8=
+
 graceful-fs@^4.1.0, graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.15"
   resolved "http://registry.npm.taobao.org/graceful-fs/download/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
