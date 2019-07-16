@@ -8,7 +8,12 @@ module.exports = {
     },
     useJSXTextNode: true,
   },
-  plugins: ['@typescript-eslint', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'react-hooks', 'import'],
+  settings: {
+    'import/resolver': {
+      "typescript": {},
+    },
+  },
   env: {
     browser: true,
   },
@@ -45,7 +50,6 @@ module.exports = {
     ],
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
     'import/prefer-default-export': 'off',
-    'import/no-unresolved': 'off',
     'implicit-arrow-linebreak': 'off',
     'object-curly-newline': 'off',
   },

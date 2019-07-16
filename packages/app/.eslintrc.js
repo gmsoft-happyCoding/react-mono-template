@@ -10,15 +10,13 @@ module.exports = {
     },
     useJSXTextNode: true,
   },
-  plugins: ['@typescript-eslint', 'react-hooks'],
+  plugins: ['@typescript-eslint', 'react-hooks', 'import'],
   env: {
     browser: true,
   },
   settings: {
     'import/resolver': {
-      webpack: {
-        config: path.resolve(__dirname, 'config/webpack.config.dev.js'),
-      },
+      "typescript": {},
     },
   },
   rules: {
@@ -59,7 +57,6 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
     'import/prefer-default-export': 'off',
-    'import/no-unresolved': 'off',
     'implicit-arrow-linebreak': 'off',
   },
 };
