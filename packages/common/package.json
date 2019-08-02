@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
-    "gen:api": "easymock init ."
+    "genapi": "stormrage genapi"
   },
   "dependencies": {
     "@types/jest": "23.3.10",
@@ -19,6 +19,7 @@
     "@types/redux-actions": "^2.3.1",
     "dva": "^2.4.1",
     "dva-model-creator": "^0.1.4",
+    "lodash": "^4.17.15",
     "ramda": "^0.26.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
@@ -29,26 +30,9 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "1.4.2",
-    "@typescript-eslint/parser": "1.4.2",
-    "archiver": "^3.0.0",
-    "cross-env": "^5.2.0",
-    "eslint-import-resolver-typescript": "^1.1.1",
-    "eslint-plugin-react-hooks": "^1.6.0",
-    "lerna": "^3.5.1",
-    "react-dev-utils": "^6.1.1",
-    "resolve": "1.8.1",
-    "sass-loader": "7.1.0",
-    "style-loader": "0.23.0",
-    "terser-webpack-plugin": "1.1.0",
-    "typescript": "<3.4.0",
-    "url-loader": "1.1.1",
-    "webpack": "4.19.1",
-    "webpack-dev-server": ">=3.1.11",
-    "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.3"
+    "stormrage": "^1.0.1"
   },
   "resolutions": {
-    "ansi-styles": "^3.2.0"
+    "webpack": "4.19.1"
   }
 }

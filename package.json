@@ -7,16 +7,16 @@
     "packages/*"
   ],
   "scripts": {
-    "start:app": "yarn workspace app run start",
-    "test:app": "yarn workspace app run test",
-    "docz:app": "yarn workspace app run docz:dev",
-    "bad:app": "yarn workspace app run bad",
-    "start:c": "yarn workspace components run start",
-    "dev-build:c": "yarn workspace components run dev-build",
-    "test:c": "yarn workspace components run test",
-    "docz:c": "yarn workspace components run docz:dev",
-    "bad:c": "yarn workspace components run bad",
-    "gen:api": "lerna run --stream --progress gen:api"
+    "start:app": "stormrage start --package app",
+    "test:app": "stormrage test --package app",
+    "docz:app": "stormrage docz --package app",
+    "bad:app": "stormrage bad --package app",
+    "start:c": "stormrage start --package components",
+    "dev-build:c": "stormrage devbuild",
+    "test:c": "stormrage test --package components",
+    "docz:c": "stormrage docz --package components",
+    "bad:c": "stormrage bad --package components",
+    "genapi": "stormrage genapi"
   },
   "resolutions": {
     "ansi-styles": "^3.2.0"
