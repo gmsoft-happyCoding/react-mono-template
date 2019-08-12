@@ -30,7 +30,7 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
-    "stormrage": "^1.1.7"
+    "stormrage": "^1.1.8"
   },
   "resolutions": {
     "webpack": "4.19.1"
