@@ -1,6 +1,6 @@
 import { actionCreatorFactory } from 'dva-model-creator';
-import { Food } from '@/types/Food.d';
 import { constant } from 'common';
+import { Food } from '@/types/Food.d';
 
 const {
   namespace: { WHAT_TO_EAT },

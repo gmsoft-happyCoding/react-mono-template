@@ -18,7 +18,7 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/redux-actions": "^2.3.1",
     "dva": "^2.4.1",
-    "dva-model-creator": "^0.1.4",
+    "dva-model-creator": "^0.4.3",
     "lodash": "^4.17.15",
     "ramda": "^0.26.1",
     "react": "16.8.6",
@@ -28,7 +28,7 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
-    "stormrage": "^1.5.5"
+    "stormrage": "^1.5.8"
   },
   "resolutions": {
     "webpack": "4.19.1"
