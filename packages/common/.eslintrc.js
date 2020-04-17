@@ -9,11 +9,6 @@ module.exports = {
     useJSXTextNode: true,
   },
   plugins: ['@typescript-eslint', 'react-hooks', 'import'],
-  settings: {
-    'import/resolver': {
-      typescript: {},
-    },
-  },
   env: {
     browser: true,
   },
@@ -56,5 +51,6 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'implicit-arrow-linebreak': 'off',
     'object-curly-newline': 'off',
+    'import/no-unresolved': 'off',
   },
 };
