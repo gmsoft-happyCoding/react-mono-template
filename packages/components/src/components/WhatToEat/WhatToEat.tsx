@@ -4,10 +4,10 @@ import { useActions } from 'gm-react-hanger';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { utils, constant } from 'common';
-import Cover from './Cover';
 import { Mode } from '@/enums/Mode';
 import * as whatToEatActions from '@/models/whatToEat/whatToEat.actions';
 import whatToEatMode, { WhatToEatState } from '@/models/whatToEat/whatToEat.model';
+import Cover from './Cover';
 
 const { stateContainer } = utils;
 const {
