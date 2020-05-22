@@ -9,13 +9,14 @@
   "scripts": {
     "start:app": "stormrage start --package app",
     "test:app": "stormrage test --package app",
-    "docz:app": "stormrage docz --package app",
+    "doc:app": "stormrage doc --package app",
     "bad:app": "stormrage bad --package app",
     "start:c": "stormrage start --package components",
     "dev-build:c": "stormrage devbuild",
     "test:c": "stormrage test --package components",
-    "docz:c": "stormrage docz --package components",
+    "doc:c": "stormrage doc --package components",
     "bad:c": "stormrage bad --package components",
+    "genmeta:c": "stormrage genmeta",
     "genapi": "stormrage genapi"
   },
   "resolutions": {

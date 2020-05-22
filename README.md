@@ -4,7 +4,7 @@
 
 1. app - 项目主应用
 2. common - app 和 components 的公共代码
-3. components - 项目组件 (建议使用 docz 开发调试)
+3. components - 项目组件 (建议使用 doc 开发调试)
 
 ---
 
@@ -27,11 +27,9 @@
 
 启动 app 项目单元测试
 
-### `yarn docz:app`
+### `yarn doc:app`
 
-启动 app 项目 docz 开发调试, 默认端口 3000
-
-docz 是什么? 详见: https://www.docz.site/documentation
+启动 app 项目 doc 开发调试, 默认端口 6060
 
 ### `yarn bad:app`
 
@@ -75,7 +73,7 @@ password - 服务器登录密码
 
 ### `yarn dev-build:c [--pick]`
 
-* `--pick` - (可选参数) (从`packages\components\config\exportComponents.js`中)手动选择需要发布的组件
+- `--pick` - (可选参数) (从`packages\components\config\exportComponents.js`中)手动选择需要发布的组件
 
 启动 components 项目的开发构建, 构建出独立的组件 bundle, 用于在 app 或其他项目中集成调试
 
@@ -83,17 +81,15 @@ password - 服务器登录密码
 
 启动 components 项目单元测试
 
-### `yarn docz:c`
+### `yarn doc:c`
 
-启动 components 项目 docz 开发调试, 默认端口 3000
-
-docz 是什么? 详见: https://www.docz.site/documentation
+启动 components 项目 doc 开发调试, 默认端口 6060
 
 ### `yarn bad:c [env] [--pick] [--no-doc]`
 
-* `--pick` - (可选参数) (从`packages\components\config\exportComponents.js`中)手动选择需要发布的组件
+- `--pick` - (可选参数) (从`packages\components\config\exportComponents.js`中)手动选择需要发布的组件
 
-* `--no-doc` - (可选参数) 不生成docz文档
+- `--no-doc` - (可选参数) 不生成 doc 文档
 
 其他详情, 请看上面的 `yarn run bad:app` 描述
 
@@ -124,7 +120,7 @@ docz 是什么? 详见: https://www.docz.site/documentation
 1. packages/*/config/webpack.config.dev.js
 2. packages/*/config/webpack.config.prod.js
 3. packages/*/tsconfig.json
-4. packages/*/doczrc.js
+4. packages/*/styleguide.config.js
 5. packages/*/jest.config.js
 ```
 
