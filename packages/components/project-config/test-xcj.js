@@ -3,6 +3,8 @@ const DeployType = require('./common/deploy-type');
 
 module.exports = {
   envs: {
+    // 生成 sourceMap
+    REACT_APP_GENERATE_SOURCEMAP: true,
     // 应用部署的域名和子路径
     REACT_APP_PUBLIC_URL: '//registry.gmsofttest.com/{{projectName}}',
     // 网关服务器base路径
