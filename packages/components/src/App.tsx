@@ -1,6 +1,5 @@
-import { hot } from 'react-hot-loader/root';
-import { utils } from 'common';
 import React from 'react';
+import { utils } from 'common';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import WhatToEat from './components/WhatToEat';
@@ -16,4 +15,4 @@ const App = () => (
   </Provider>
 );
 
-export default hot(App);
+export default App;
