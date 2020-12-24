@@ -20,7 +20,7 @@ const scripts = [
   'moment/2.27.0/locale.zh-cn.js',
   'moment/use-locale.js',
   'antd/3.26.20-custom.0/antd.js',
-  'styled-components/4.1.1/styled-components.js',
+  'styled-components/5.2.1/styled-components.js',
   'history/4.7.2/history.js',
   'react-router-dom/4.3.1/react-router-dom.js',
   'redux/4.0.1/redux.js',
