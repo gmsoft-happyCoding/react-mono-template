@@ -15,7 +15,7 @@ export interface StateContainer {
 const stateContainer: StateContainer = create({
   history,
   NODE_ENV: process.env.NODE_ENV,
-  onError: err => {
+  onError: (err: any) => {
     // err.preventDefault();
     /* eslint-disable no-console */
     console.error(err);

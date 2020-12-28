@@ -19,11 +19,12 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const externals = require('./externals');
-const { packageSrcAbsPaths } = require('./packages');
+const { projectRoot, packageSrcRelativeProjectRootPaths, packageSrcAbsPaths } = require('./packages');
 const systemModules = require('./systemModules');
 const exportComponents = global.PICK_EXPORT_COMPONENTS || require('./exportComponents');
 
@@ -260,23 +261,6 @@ const webpackConfig = {
     rules: [
       // Disable require.ensure as it's not a standard language feature.
       { parser: { requireEnsure: false, system: false } },
-
-      // First, run the linter.
-      // It's important to do this before Babel processes the JS.
-      {
-        test: /\.(js|mjs|jsx|ts|tsx)$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              formatter: require.resolve('react-dev-utils/eslintFormatter'),
-              eslintPath: require.resolve('eslint'),
-            },
-            loader: require.resolve('eslint-loader'),
-          },
-        ],
-        include: packageSrcAbsPaths,
-      },
       {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
@@ -530,6 +514,20 @@ const webpackConfig = {
         watch: paths.appSrc,
         silent: true,
         formatter: typescriptFormatter,
+      }),
+      new ESLintPlugin({
+        // Plugin options
+        extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+        formatter: require.resolve('react-dev-utils/eslintFormatter'),
+        eslintPath: require.resolve('eslint'),
+        context: projectRoot,
+        files: packageSrcRelativeProjectRootPaths,
+        cache: true,
+        cacheLocation: path.resolve(paths.appNodeModules, '.cache/.eslintcache'),
+        // ESLint class options
+        cwd: projectRoot,
+        resolvePluginsRelativeTo: __dirname,
+        ignorePath: path.resolve(projectRoot, '.eslintignore'),
       }),
   ].filter(Boolean),
   // Some libraries import Node modules but don't use them in the browser.

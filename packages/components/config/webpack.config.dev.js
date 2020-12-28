@@ -15,11 +15,12 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const externals = require('./externals');
-const { packageSrcAbsPaths } = require('./packages');
+const { projectRoot, packageSrcRelativeProjectRootPaths, packageSrcAbsPaths } = require('./packages');
 const systemModules = require('./systemModules');
 const exportComponents = global.PICK_EXPORT_COMPONENTS || require('./exportComponents');
 
@@ -37,6 +38,9 @@ const env = getClientEnvironment(publicUrl);
 
 // Check if TypeScript is setup
 const useTypeScript = fs.existsSync(paths.appTsConfig);
+
+const webpackDevClientEntry = require.resolve('react-dev-utils/webpackHotDevClient');
+const reactRefreshOverlayEntry = require.resolve('react-dev-utils/refreshOverlayInterop');
 
 // style files regexes
 const cssRegex = /\.css$/;
@@ -93,8 +97,8 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   externals: externals(DEV_BUILD ? 'root' : 'var'),
   entry: DEV_BUILD
-    ? { webpackHotDevClient, ...exportComponents }
-    : [webpackHotDevClient, paths.appIndexJs].filter(Boolean),
+  ? exportComponents
+  : paths.appIndexJs,
   output: {
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true,
@@ -171,24 +175,6 @@ module.exports = {
     rules: [
       // Disable require.ensure as it's not a standard language feature.
       { parser: { requireEnsure: false, system: false } },
-
-      // First, run the linter.
-      // It's important to do this before Babel processes the JS.
-      {
-        test: /\.(js|mjs|jsx|ts|tsx)$/,
-        enforce: 'pre',
-        use: [
-          {
-            options: {
-              formatter: require.resolve('react-dev-utils/eslintFormatter'),
-              eslintPath: require.resolve('eslint'),
-            },
-            loader: require.resolve('eslint-loader'),
-          },
-        ],
-        include: packageSrcAbsPaths,
-        exclude: path.join(paths.appSrc, 'api'),
-      },
       {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
@@ -400,7 +386,31 @@ module.exports = {
         formatter: typescriptFormatter,
       }),
     new webpack.HotModuleReplacementPlugin(),
-    new ReactRefreshWebpackPlugin(),
+    new ReactRefreshWebpackPlugin({
+      overlay: {
+        entry: webpackDevClientEntry,
+        // The expected exports are slightly different from what the overlay exports,
+        // so an interop is included here to enable feedback on module-level errors.
+        module: reactRefreshOverlayEntry,
+        // Since we ship a custom dev client and overlay integration,
+        // the bundled socket handling logic can be eliminated.
+        sockIntegration: false,
+      },
+    }),
+    new ESLintPlugin({
+      // Plugin options
+      extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+      formatter: require.resolve('react-dev-utils/eslintFormatter'),
+      eslintPath: require.resolve('eslint'),
+      context: projectRoot,
+      files: packageSrcRelativeProjectRootPaths,
+      cache: true,
+      cacheLocation: path.resolve(paths.appNodeModules, '.cache/.eslintcache'),
+      // ESLint class options
+      cwd: projectRoot,
+      resolvePluginsRelativeTo: __dirname,
+      ignorePath: path.resolve(projectRoot, '.eslintignore'),
+    }),
   ].filter(Boolean),
 
   // Some libraries import Node modules but don't use them in the browser.
