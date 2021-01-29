@@ -1,6 +1,6 @@
 import { DvaModelBuilder } from 'dva-model-creator';
-import { api, constant } from 'common';
-import { Food } from '@/types/Food.d';
+import { constant } from 'common';
+import type { Food } from '@/types/Food';
 import { reset } from './whatToEat.actions';
 import drawHandler from './handler/draw.handler';
 import { searchFoodHandler } from './handler';
