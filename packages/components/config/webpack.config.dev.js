@@ -20,11 +20,13 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const externals = require('./externals');
-const { projectRoot, packageSrcRelativeProjectRootPaths, packageSrcAbsPaths } = require('./packages');
+const {
+  projectRoot,
+  packageSrcRelativeProjectRootPaths,
+  packageSrcAbsPaths,
+} = require('./packages');
 const systemModules = require('./systemModules');
 const exportComponents = global.PICK_EXPORT_COMPONENTS || require('./exportComponents');
-
-const webpackHotDevClient = require.resolve('react-dev-utils/webpackHotDevClient');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -96,9 +98,7 @@ module.exports = {
   // These are the "entry points" to our application.
   // This means they will be the "root" imports that are included in JS bundle.
   externals: externals(DEV_BUILD ? 'root' : 'var'),
-  entry: DEV_BUILD
-  ? exportComponents
-  : paths.appIndexJs,
+  entry: DEV_BUILD ? exportComponents : paths.appIndexJs,
   output: {
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true,
