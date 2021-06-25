@@ -15,6 +15,11 @@ export interface StateContainer {
 const stateContainer: StateContainer = create({
   history,
   NODE_ENV: process.env.NODE_ENV,
+  useGlobalContextPlugin: true,
+  globalContextOpts: {
+    appName: '{{projectName}}',
+    djcGatewayBaseUrl: process.env.REACT_APP_DJC_GATEWAY_BASE,
+  },
   onError: (err: any) => {
     // err.preventDefault();
     /* eslint-disable no-console */
