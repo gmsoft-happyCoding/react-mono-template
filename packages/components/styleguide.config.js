@@ -36,7 +36,7 @@ const scripts = [
   'immer/1.8.0/immer.umd.js',
   'event-bus/1.2.0/event-bus.umd.js',
   'axios/0.18.1/axios.js',
-  'auth-sdk/1.5.0/state-container.js',
+  'state-container/1.5.0/state-container.js',
   'qs/6.9.3/qs.js',
   'auth-sdk/1.3.0/auth-sdk.umd.js',
   'systemjs/0.21.5/system.src.js',
