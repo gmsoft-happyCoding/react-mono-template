@@ -24,7 +24,11 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const externals = require('./externals');
-const { projectRoot, packageSrcRelativeProjectRootPaths, packageSrcAbsPaths } = require('./packages');
+const {
+  projectRoot,
+  packageSrcRelativeProjectRootPaths,
+  packageSrcAbsPaths,
+} = require('./packages');
 const systemModules = require('./systemModules');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -121,6 +125,7 @@ const webpackConfig = {
   // In production, we only want to load the app code.
   entry: [paths.appIndexJs],
   output: {
+    jsonpFunction: `webpackJsonp${require(paths.appPackageJson).name}`,
     // The build folder.
     path: paths.appBuild,
     // Generated JS file names (with nested folders).
@@ -508,20 +513,20 @@ const webpackConfig = {
         silent: true,
         formatter: typescriptFormatter,
       }),
-      new ESLintPlugin({
-        // Plugin options
-        extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
-        formatter: require.resolve('react-dev-utils/eslintFormatter'),
-        eslintPath: require.resolve('eslint'),
-        context: projectRoot,
-        files: packageSrcRelativeProjectRootPaths,
-        cache: true,
-        cacheLocation: path.resolve(paths.appNodeModules, '.cache/.eslintcache'),
-        // ESLint class options
-        cwd: projectRoot,
-        resolvePluginsRelativeTo: __dirname,
-        ignorePath: path.resolve(projectRoot, '.eslintignore'),
-      }),
+    new ESLintPlugin({
+      // Plugin options
+      extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
+      formatter: require.resolve('react-dev-utils/eslintFormatter'),
+      eslintPath: require.resolve('eslint'),
+      context: projectRoot,
+      files: packageSrcRelativeProjectRootPaths,
+      cache: true,
+      cacheLocation: path.resolve(paths.appNodeModules, '.cache/.eslintcache'),
+      // ESLint class options
+      cwd: projectRoot,
+      resolvePluginsRelativeTo: __dirname,
+      ignorePath: path.resolve(projectRoot, '.eslintignore'),
+    }),
   ].filter(Boolean),
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
