@@ -35,6 +35,6 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
-    "stormrage": "2.9.3"
+    "stormrage": "2.9.6"
   }
 }
