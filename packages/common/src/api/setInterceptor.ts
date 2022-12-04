@@ -1,13 +1,14 @@
-import { useRequestInterceptor, useResponseInterceptor } from './util';
-import { showNetworkError } from '../utils';
+import { AxiosInstance } from 'axios';
 import { axiosTokenInterceptor } from '@gmsoft/auth-sdk';
+import { showNetworkError } from '../utils';
 
-useRequestInterceptor(axiosTokenInterceptor());
+export default (instance: AxiosInstance) => {
+  instance.interceptors.request.use(axiosTokenInterceptor());
 
-const errorHandler = error => {
-  showNetworkError(error);
-  return Promise.reject(error);
+  const errorHandler = error => {
+    showNetworkError(error);
+    return Promise.reject(error);
+  };
+
+  instance.interceptors.response.use(undefined, errorHandler);
 };
-
-/* eslint-disable react-hooks/rules-of-hooks */
-useResponseInterceptor(undefined, errorHandler);
