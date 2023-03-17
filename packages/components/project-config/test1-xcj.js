@@ -9,8 +9,6 @@ module.exports = {
     REACT_APP_GENERATE_SOURCEMAP: true,
     // 应用部署的域名和子路径
     REACT_APP_PUBLIC_URL: `//registry.${domain}/{{projectName}}`,
-    // 网关服务器base路径
-    REACT_APP_API_GATEWAY_BASE: `//www.${domain}/demo-gateway`,
     // 基础服务网关
     REACT_APP_DJC_GATEWAY_BASE: `//www.${domain}/djc-gateway`,
     // 发布部署, 建议配置不然每次都需要交互设置
