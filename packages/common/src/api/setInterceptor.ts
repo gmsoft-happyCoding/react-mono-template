@@ -3,6 +3,7 @@ import { axiosTokenInterceptor } from '@gmsoft/auth-sdk';
 import { showNetworkError } from '../utils';
 
 export default (instance: AxiosInstance) => {
+  // @ts-ignore
   instance.interceptors.request.use(axiosTokenInterceptor());
 
   const errorHandler = error => {
