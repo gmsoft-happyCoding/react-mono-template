@@ -29,7 +29,7 @@ const {
   packageSrcRelativeProjectRootPaths,
   packageSrcAbsPaths,
 } = require('./packages');
-const systemModules = require('./systemModules');
+const systemScripts = require('./systemScripts');
 const exportComponents = global.PICK_EXPORT_COMPONENTS || require('./exportComponents');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -122,7 +122,7 @@ const webpackConfig = {
   // We generate sourcemaps in production. This is slow but gives good results.
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
-  externals: externals('root'),
+  externals: externals(),
   // In production, we only want to load the app code.
   entry: exportComponents,
   output: {
@@ -425,7 +425,7 @@ const webpackConfig = {
       inject: true,
       template: paths.appHtml,
       templateParameters: {
-        systemModules,
+        systemScripts,
       },
       minify: {
         removeComments: true,

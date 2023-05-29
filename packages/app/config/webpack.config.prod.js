@@ -29,7 +29,7 @@ const {
   packageSrcRelativeProjectRootPaths,
   packageSrcAbsPaths,
 } = require('./packages');
-const systemModules = require('./systemModules');
+const systemScripts = require('./systemScripts');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -138,6 +138,7 @@ const webpackConfig = {
     // Point sourcemap entries to original disk location (format as URL on Windows)
     devtoolModuleFilenameTemplate: info =>
       path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/'),
+    libraryTarget: 'umd',
   },
   optimization: {
     minimizer: [
@@ -418,7 +419,7 @@ const webpackConfig = {
       inject: true,
       template: paths.appHtml,
       templateParameters: {
-        systemModules,
+        systemScripts,
       },
       minify: {
         removeComments: true,
