@@ -34,7 +34,5 @@
     "react-router-dom": "5.2.0",
     "redux": "^4.0.1"
   },
-  "devDependencies": {
-    "stormrage": "2.9.6"
-  }
+  "devDependencies": {}
 }

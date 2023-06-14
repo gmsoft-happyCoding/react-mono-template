@@ -1,9 +1,12 @@
 {
-  "name": "{{projectName}}-app",
-  "version": "0.1.0",
+  "name": "{{projectDeployNameApp}}",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "stormrage start",
+    "start-next": "stormrage start -n",
+    "make": "stormrage make",
+    "deploy": "stormrage deploy {{projectDeployNameApp}} test1 zcj",
     "test": "stormrage test",
     "doc": "stormrage doc",
     "genapi": "stormrage genapi",
@@ -50,6 +53,6 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "stormrage": "2.9.6"
+    "stormrage": "^3.0.0-beta.11"
   }
 }

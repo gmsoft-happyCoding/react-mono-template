@@ -1,0 +1,39 @@
+business:
+  # （必须）项目名：此名称将决定make产生的成品文件在成品库中的名称，deploy阶段将使用此名称作为项目名进行部署
+  project-name: '{{projectDeployNameComponents}}'
+  # （必须）项目部署位置
+  public-url: //localhost:3030/{{projectDeployNameComponents}}
+  CDN_SERVER: //cdn.gm
+  COMPONENT_REGISTRY_SERVER: //registry.cqzcjtest1.gm
+  ZCJ_DOMAIN: //www.cqzcjtest1.gm
+  XCJ_DOMAIN: //www.xcjtest1.gm
+
+# 网关配置
+gateway:
+  djc: /djc-gateway
+  xcj: /xcj-gateway
+  yw: /yw-gateway
+  zcj: /gwebsite
+# 域名配置
+hosts:
+  account: account.xcjtest1.gm
+  cdn: cdn.gm
+  component-registry-server: registry.xcjtest1.gm
+  djc: www.djctest1.gm
+  djc-domain: djctest1.gm
+  file: www.xcjtest1.gm
+  fp: fp.cqzcjtest1.gm
+  glxt-domain: 192.168.2.22
+  xcj: www.xcjtest1.gm
+  xcj-domain: xcjtest1.gm
+  xcjsc: xcjsc.xcjtest1.gm
+  xunbi: xunbi.cqzcjtest1.gm
+  xygh: xygh.xcjtest1.gm
+  zcj: www.cqzcjtest1.gm
+  zcj-domain: cqzcjtest1.gm
+# PDF预览地址
+pdf-preview:
+  xcj: //www.xcjtest1.gm/pdf-viewer?disableAutoFetch=true&disableStream=true&
+  xcj-print: //www.xcjtest1.gm/pdf-viewer?disableAutoFetch=false&disableStream=true&
+  zcj: //www.cqzcjtest1.gm/pdf-viewer?disableAutoFetch=true&disableStream=true&
+  zcj-print: //www.cqzcjtest1.gm/pdf-viewer?disableAutoFetch=false&disableStream=true&

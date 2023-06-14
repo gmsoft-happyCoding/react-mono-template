@@ -1,11 +1,14 @@
 {
-  "name": "{{projectName}}-components",
-  "version": "0.1.0",
+  "name": "{{projectDeployNameComponents}}",
+  "version": "1.0.0",
   "private": true,
   "isComponents": true,
   "scripts": {
     "start": "stormrage start",
     "dev-build": "stormrage devbuild",
+    "dev-build-next": "stormrage devbuild --next",
+    "make": "stormrage make",
+    "deploy": "stormrage deploy {{projectDeployNameComponents}} test1 zcj",
     "test": "stormrage test",
     "doc": "stormrage doc",
     "genapi": "stormrage genapi",
@@ -53,6 +56,6 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "stormrage": "2.9.6"
+    "stormrage": "^3.0.0-beta.11"
   }
 }

@@ -18,7 +18,7 @@ const stateContainer: StateContainer = create({
   useGlobalContextPlugin: true,
   globalContextOpts: {
     appName: '{{projectName}}',
-    djcGatewayBaseUrl: process.env.REACT_APP_DJC_GATEWAY_BASE,
+    djcGatewayBaseUrl: process.env['gateway.djc'],
   },
   onError: (err: any) => {
     // err.preventDefault();
