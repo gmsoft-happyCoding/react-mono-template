@@ -20,8 +20,8 @@
     "bad:c": "stormrage bad --package components",
     "make-app": "stormrage make --package app",
     "make-components": "stormrage make --package components",
-    "deploy-app": "stormrage deploy {{projectDeployNameApp}} zcj test1",
-    "deploy-components": "stormrage deploy {{projectDeployNameComponents}} zcj test1",
+    "deploy-app": "stormrage deploy {{projectDeployNameApp}} test1 zcj",
+    "deploy-components": "stormrage deploy {{projectDeployNameComponents}} test1 zcj",
     "genmeta:c": "stormrage genmeta",
     "genapi": "stormrage genapi"
   },
