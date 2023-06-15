@@ -36,7 +36,7 @@ const getIcon = () => {
 const pathConf = {
   PATH_WHAT_TO_EAT: '/whatToEat',
   PATH_WHAT_TO_EAT_1: '/whatToEat_1',
-  PATH_WHAT_TO_EAT_2: '/whatToEat_1',
+  PATH_WHAT_TO_EAT_2: '/whatToEat_2',
   PATH_EXCEPTION_401: '/401',
   PATH_EXCEPTION_403: '/403',
   PATH_EXCEPTION_404: '/404',

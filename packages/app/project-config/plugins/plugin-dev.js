@@ -12,6 +12,8 @@
 /* eslint-disable no-param-reassign */
 
 const { isNil, pick } = require('lodash');
+const path = require('path');
+const fs = require('fs');
 
 /**
  * if you want dynamic change envs you can use it
@@ -19,6 +21,14 @@ const { isNil, pick } = require('lodash');
 module.exports = async context => {
   const { inquirer, produce, pluginOption } = context;
   const isDev = process.env.NODE_ENV !== 'production';
+
+  // 最后一次启动代理记录读入
+  const lastRunFile = path.resolve(__dirname, './lastRun.data');
+  let defEnv = 'dev1';
+  if (fs.existsSync(lastRunFile)) {
+    defEnv = fs.readFileSync(lastRunFile, 'utf8');
+  }
+
   const questions = [
     {
       type: 'list',
@@ -34,7 +44,7 @@ module.exports = async context => {
         { name: 'show', value: 'show' },
         { name: 'mock', value: 'mock' },
       ],
-      default: 'dev1',
+      default: defEnv,
     },
   ];
 
@@ -45,6 +55,14 @@ module.exports = async context => {
     const answers = await inquirer
       .prompt(realQuestion)
       .then(_answers => ({ ...pluginOption, ..._answers }));
+
+    // 最后一次启动代理配置写出
+    fs.writeFileSync(
+      lastRunFile,
+      process.env.REACT_APP_PROXY_PLATFORM || answers.REACT_APP_PROXY_PLATFORM,
+      'utf-8'
+    );
+
     return produce(context, draft => {
       draft.config.envs = {
         ...draft.config.envs,

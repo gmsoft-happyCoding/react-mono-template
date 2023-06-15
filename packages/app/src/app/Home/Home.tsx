@@ -75,7 +75,7 @@ function Home(props: Props & RouteComponentProps) {
         width={250}
         style={{ overflow: 'auto', minHeight: '100vh', position: 'fixed', left: 0 }}
       >
-        <LoggoBox>{{}}</LoggoBox>
+        <LoggoBox>{{projectTitle}}</LoggoBox>
         <MenuLayout>
           <Menu mode="inline" theme="dark" onClick={clickMenu}>
             {renderMenu(menuConf)}
