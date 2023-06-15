@@ -14,6 +14,9 @@ import NotAuth from '@/app/Exception/403';
 import NotFound from '@/app/Exception/404';
 import { Layout } from './style';
 import { menuConf, pathConf } from './menuConf';
+import { getFlattenedRoutes } from './getFlattenedRoutes';
+
+const routerConf = getFlattenedRoutes(menuConf);
 
 function HomeContent() {
   const { independent = true } = useSearchParams();
@@ -23,7 +26,7 @@ function HomeContent() {
     <Layout haspadding={independent}>
       <React.Suspense fallback={<LoadingBlock />}>
         <Switch>
-          {menuConf.map(item => (
+          {routerConf.map(item => (
             <Route key={item.path} path={item.path} component={item.component} />
           ))}
           <Route

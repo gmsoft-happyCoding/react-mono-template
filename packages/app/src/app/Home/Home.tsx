@@ -40,7 +40,7 @@ type Props = {};
 function Home(props: Props & RouteComponentProps) {
   // 取得用户信息
   const userInfo = useMe();
-  const [isDebug, setIsDebug] = useState(false);
+  const [isDebug, setIsDebug] = useState(process.env.NODE_ENV !== 'production');
   const switchDebugCb = useCallback(
     (e: MouseEvent) => {
       if (e.altKey && e.shiftKey) {
