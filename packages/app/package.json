@@ -24,7 +24,7 @@
     "@types/styled-components": "^5.1.5",
     "antd": "3.26.20-custom.4",
     "axios": "0.24.0",
-    "cloud-component": "^0.8.1",
+    "cloud-component": "0.8.2",
     "dva": "^2.4.1",
     "dva-model-creator": "^0.4.3",
     "gm-react-hanger": "^2.3.3",
