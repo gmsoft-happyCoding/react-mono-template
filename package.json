@@ -6,6 +6,10 @@
   "workspaces": [
     "packages/*"
   ],
+  "subProject": [
+    "app",
+    "components"
+  ],
   "scripts": {
     "start:app": "stormrage start --package app",
     "test:app": "stormrage test --package app",

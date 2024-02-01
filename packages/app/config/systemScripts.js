@@ -5,7 +5,7 @@ const libKeys = Object.keys(externalLibs);
 
 const systemJsMaps = libKeys.map(
   (key, index) =>
-    `"${key}":"${externalLibs[key].cdn[process.env.NODE_ENV]}"${
+    `"${key}":"${externalLibs[key].cdn[process.env['NODE_ENV']]}"${
       index === libKeys.length - 1 ? '' : ','
     }`
 );
@@ -19,6 +19,6 @@ const mapsJSON = `{
 const mapsScript = `<script type="systemjs-importmap">${mapsJSON}</script>`;
 
 module.exports = `${mapsScript}
-<script src="${process.env.REACT_APP_CDN_SERVER}/systemjs/6.14.1/system.min.js"></script>
-<script src="${process.env.REACT_APP_CDN_SERVER}/systemjs/6.14.1/extras/amd.min.js"></script>
-<script src="${process.env.REACT_APP_CDN_SERVER}/systemjs/6.14.1/extras/use-default.min.js"></script>`;
+<script src="${process.env['hosts.cdn']}/systemjs/6.14.1/system.min.js"></script>
+<script src="${process.env['hosts.cdn']}/systemjs/6.14.1/extras/amd.min.js"></script>
+<script src="${process.env['hosts.cdn']}/systemjs/6.14.1/extras/use-default.min.js"></script>`;
