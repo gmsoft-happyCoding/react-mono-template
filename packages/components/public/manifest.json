@@ -1,6 +1,6 @@
 {
-  "short_name": "{{projectName}}",
-  "name": "{{projectName}}",
+  "short_name": "{{projectName}}-components",
+  "name": "{{projectName}}-components",
   "icons": [
     {
       "src": "favicon.ico",

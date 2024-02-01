@@ -11,12 +11,12 @@
     "components"
   ],
   "scripts": {
-    "start:app": "stormrage start --package app -n",
+    "start:app": "stormrage start -n --package app",
     "test:app": "stormrage test --package app",
     "doc:app": "stormrage doc --package app",
     "bad:app": "stormrage bad --package app",
-    "start:c": "stormrage start --package components",
-    "dev-build:c": "stormrage devbuild",
+    "start:c": "stormrage start -n --package components",
+    "dev-build:c": "stormrage devbuild -n",
     "test:c": "stormrage test --package components",
     "doc:c": "stormrage doc --package components",
     "bad:c": "stormrage bad --package components",
