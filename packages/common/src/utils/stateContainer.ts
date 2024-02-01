@@ -14,7 +14,7 @@ export interface StateContainer {
 
 const stateContainer: StateContainer = create({
   history,
-  NODE_ENV: process.env['NODE_ENV'],
+  NODE_ENV: process.env.NODE_ENV,
   useGlobalContextPlugin: true,
   globalContextOpts: {
     appName: '{{projectName}}',

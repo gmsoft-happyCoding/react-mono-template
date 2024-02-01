@@ -1,7 +1,7 @@
 import create from 'cloud-component';
 
-const registryServer = process.env['hosts.component-registry-server']
-  ? `//${process.env['hosts.component-registry-server']}`
+const registryServer = process.env['business.component-registry-server']
+  ? `//${process.env['business.component-registry-server']}`
   : '';
 
 const { loadComponent, CloudComponent } = create(null, registryServer);
