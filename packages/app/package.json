@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "stormrage start -n",
+    "start": "stormrage start",
     "test": "stormrage test",
     "doc": "stormrage doc",
     "genapi": "stormrage genapi",

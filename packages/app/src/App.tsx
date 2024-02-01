@@ -3,9 +3,9 @@ import { utils } from 'common';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import styled from 'styled-components';
-import CloudComponent, { loadComponent } from '@/components/CloudComponent';
 import { useRestore } from 'gm-react-hanger';
 import { Themeable } from '@gmsoft/tt-sdk';
+import CloudComponent, { loadComponent } from '@/components/CloudComponent';
 
 // 通过组件名字 从 registry.xcjdev1.gm 加载
 const WhatToEat = loadComponent({ name: 'test-project/WhatToEat' });
