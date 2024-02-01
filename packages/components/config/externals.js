@@ -189,6 +189,26 @@ module.exports = () => ({
       production: `${process.env['hosts.cdn']}/reselect/4.0.0/reselect.min.js`,
     },
   },
+  'react-virtualized': {
+    root: 'ReactVirtualized',
+    amd: 'react-virtualized',
+    commonjs: 'react-virtualized',
+    commonjs2: 'react-virtualized',
+    cdn: {
+      development: `${process.env['hosts.cdn']}/react-virtualized/9.21.0/react-virtualized.js`,
+      production: `${process.env['hosts.cdn']}/react-virtualized/9.21.0/react-virtualized.min.js`,
+    },
+  },
+  'react-virtualized-tree': {
+    root: 'reactVirtualizedTree',
+    amd: 'react-virtualized-tree',
+    commonjs: 'react-virtualized-tree',
+    commonjs2: 'react-virtualized-tree',
+    cdn: {
+      development: `${process.env['hosts.cdn']}/react-virtualized-tree/2.0.2/react-virtualized-tree.js`,
+      production: `${process.env['hosts.cdn']}/react-virtualized-tree/2.0.2/react-virtualized-tree.min.js`,
+    },
+  },
   qs: {
     root: 'Qs',
     amd: 'qs',
