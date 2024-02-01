@@ -4,7 +4,7 @@
   "private": true,
   "isComponents": true,
   "scripts": {
-    "start": "stormrage start",
+    "start": "stormrage start -n",
     "dev-build": "stormrage devbuild",
     "test": "stormrage test",
     "doc": "stormrage doc",
