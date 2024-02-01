@@ -10,7 +10,7 @@ business:
 
 hosts:
   # 部署域
-  domain: //localhost:3030
+  domain: localhost:3030
 
 gateway:
   # 网关服务器base路径
