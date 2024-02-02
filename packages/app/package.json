@@ -10,7 +10,7 @@
     "bad": "stormrage bad"
   },
   "dependencies": {
-    "@gmsoft/tt-sdk": "1.5.0",
+    "@gmsoft/tt-sdk": "1.6.0",
     "@gmsoft/ui": "^1.14.1",
     "antd": "3.26.20-custom.4",
     "axios": "0.24.0",
