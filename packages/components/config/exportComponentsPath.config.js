@@ -5,7 +5,7 @@ const exportComponentConfig = [
    */
   'WhatToEat',
   /**
-   * name 与 path 相同
+   * name 与 path 不同
    * path 不包含 @/src/components 部分
    * 例如:
    * ['DemoComponent', 'demo/DemoComponent']
