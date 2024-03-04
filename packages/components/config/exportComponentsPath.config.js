@@ -1,10 +1,11 @@
 // 要导出的组件
 const exportComponentConfig = [
   /**
-   * 单位管理
+   * name 与 path 相同
    */
   'WhatToEat',
   /**
+   * name 与 path 相同
    * path 不包含 @/src/components 部分
    * 例如:
    * ['DemoComponent', 'demo/DemoComponent']
