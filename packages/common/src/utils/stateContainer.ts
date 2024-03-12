@@ -1,7 +1,5 @@
 import { create } from 'state-container';
-// @ts-ignore
 import { Store } from 'redux';
-// @ts-ignore
 import { History } from 'history';
 import { Model } from 'dva';
 import history from './history';
@@ -12,6 +10,11 @@ export interface StateContainer {
   injectModel: (model: Model, replace?: boolean) => Model;
 }
 
+const origin =
+  process.env.NODE_ENV === 'development'
+    ? `https://${process.env['business.dev-plat-domain']}`
+    : undefined;
+
 const stateContainer: StateContainer = create({
   history,
   NODE_ENV: process.env.NODE_ENV,
@@ -19,6 +22,8 @@ const stateContainer: StateContainer = create({
   globalContextOpts: {
     appName: '{{projectName}}',
     djcGatewayBaseUrl: process.env['gateway.djc'],
+    origin,
+    meOrigin: origin,
   },
   onError: (err: any) => {
     // err.preventDefault();

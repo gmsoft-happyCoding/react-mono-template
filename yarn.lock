@@ -2365,10 +2365,10 @@
     state-container "1.5.0"
     styled-components "^5.3.0"
 
-"@gmsoft/dva-global-context-plugin@1.9.1":
-  version "1.9.1"
-  resolved "http://192.168.2.10:8081/repository/npm.gm/@gmsoft/dva-global-context-plugin/-/dva-global-context-plugin-1.9.1.tgz#1cfd005d7806b0df73383b27144f89655f42afe6"
-  integrity sha512-fb8eXFn48EYnoZjjTnwc0MgtH00BvDf1v8iBjBDcVBd8Cq5pc/geRotr5E+bdF3k+4i1Lusox5zpW/cq204Uhw==
+"@gmsoft/dva-global-context-plugin@1.10.0":
+  version "1.10.0"
+  resolved "http://192.168.2.10:8081/repository/npm.gm/@gmsoft/dva-global-context-plugin/-/dva-global-context-plugin-1.10.0.tgz#03ee27d81747cfb358d1fec8ee4349ab8f79154b"
+  integrity sha512-2Owtkct+9h/naPNwwaJ3o2QihsM9ZW+PmfhcIF/U9cEakfeBg/48bhpipGSs+hxKJPda5s9Lzw0S/ixtVlDFiw==
   dependencies:
     "@gmsoft/auth-sdk" "1.1.0"
     react-redux "7.1.0"
@@ -19714,12 +19714,12 @@ stat-mode@^0.2.0:
   resolved "http://192.168.2.10:8081/repository/npm.gm/stat-mode/-/stat-mode-0.2.2.tgz#e6c80b623123d7d80cf132ce538f346289072502"
   integrity sha1-5sgLYjEj19gM8TLOU480YokHJQI=
 
-state-container@1.5.0:
-  version "1.5.0"
-  resolved "http://192.168.2.10:8081/repository/npm.gm/state-container/-/state-container-1.5.0.tgz#49d57499376ea7599f366c062d00b37f299ccf3d"
-  integrity sha512-LQwIyc+MamSZgCqGfNEu6OzbvWcHewALkm+/lhjiMvuC8XrsGDpAj9s3/W9Kutnp9wUzBhYd57P7T8ITInWXSw==
+state-container@1.5.0, state-container@1.6.0:
+  version "1.6.0"
+  resolved "http://192.168.2.10:8081/repository/npm.gm/state-container/-/state-container-1.6.0.tgz#ede5a6e36871e0dbcb84380027ec990baf71c9b1"
+  integrity sha512-iGTmb5tnli36ABEQx4CZClSUoalwEIpcO4kebAQMURQ2FeZdLZYKCUcsd5INAwW0jHO6AzWQEv+4znCzfU7xhQ==
   dependencies:
-    "@gmsoft/dva-global-context-plugin" "1.9.1"
+    "@gmsoft/dva-global-context-plugin" "1.10.0"
     "@gmsoft/dva-theme-plugin" "1.4.0"
     dva "^2.4.1"
     dva-core "^2.0.1"
@@ -19751,10 +19751,10 @@ stealthy-require@^1.1.1:
   resolved "http://192.168.2.10:8081/repository/npm.gm/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
 
-stormrage@3.0.0-beta.48:
-  version "3.0.0-beta.48"
-  resolved "http://192.168.2.10:8081/repository/npm.gm/stormrage/-/stormrage-3.0.0-beta.48.tgz#4300f8e7b9f3ee33d09eb4bc2002430c6682c716"
-  integrity sha512-RuXgoIka/2krH/W7yaj78/Y7MIRoh1Fe/y3k0mUjmLdhP1rUK4wR5ncT/4hWYPKkVBZdxCXaMiQPZcADfk7qHQ==
+stormrage@3.0.0-beta.49:
+  version "3.0.0-beta.49"
+  resolved "http://192.168.2.10:8081/repository/npm.gm/stormrage/-/stormrage-3.0.0-beta.49.tgz#d4dce46508b20be5e388853f69fdaec3a43afaa3"
+  integrity sha512-nyDN1UXR5jFBk0PkRNQ4tJpRR7Pi+NJM+5WB3fnxPeJTWoP01oR9tZA588I+IM6x9vuJn/VL3ykM4FHLo3ySUQ==
   dependencies:
     "@babel/core" "^7.7.4"
     "@babel/plugin-proposal-export-default-from" "^7.7.4"
