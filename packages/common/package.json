@@ -36,7 +36,7 @@
     "@types/react-redux": "^7.1.0",
     "@types/react-router-dom": "^5.1.7",
     "@types/redux-actions": "^2.3.1",
-    "stormrage": "3.0.0-beta.50"
+    "stormrage": "3.0.0-beta.52"
   },
   "resolutions": {
     "axios": "0.24.0"
