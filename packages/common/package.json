@@ -8,7 +8,7 @@
     "genapi": "stormrage genapi"
   },
   "dependencies": {
-    "@gmsoft/auth-sdk": "1.7.0",
+    "@gmsoft/auth-sdk": "1.8.0",
     "@gmsoft/event-bus": "1.4.0",
     "@gmsoft/ui": "^1.14.1",
     "axios": "0.24.0",
@@ -36,7 +36,7 @@
     "@types/react-redux": "^7.1.0",
     "@types/react-router-dom": "^5.1.7",
     "@types/redux-actions": "^2.3.1",
-    "stormrage": "3.0.0-beta.52"
+    "stormrage": "3.0.0-beta.56"
   },
   "resolutions": {
     "axios": "0.24.0"
