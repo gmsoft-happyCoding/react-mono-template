@@ -2317,22 +2317,6 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@gmsoft/auth-sdk@1.1.0":
-  version "1.1.0"
-  resolved "http://192.168.2.10:8081/repository/npm.gm/@gmsoft/auth-sdk/-/auth-sdk-1.1.0.tgz#6f0d3114391005aa8e7dc5aa9839d562c468da97"
-  integrity sha512-3BZ4cmLC0VnJW90gjCJUFY5WVIEArOGRcyPloz4JOy/qRLIb4nX4hKsrRQbNj96Y+Zllo85p34m5DI4i6SyZiQ==
-  dependencies:
-    "@gmsoft/ui" "^1.12.3"
-    antd "3.26.20-custom.2"
-    axios "0.18.1"
-    qs "^6.10.1"
-    react "^17.0.0"
-    react-dom "^17.0.0"
-    react-redux "^7.2.4"
-    redux "^4.1.0"
-    state-container "1.5.0"
-    styled-components "^5.3.0"
-
 "@gmsoft/auth-sdk@1.5.0":
   version "1.5.0"
   resolved "http://192.168.2.10:8081/repository/npm.gm/@gmsoft/auth-sdk/-/auth-sdk-1.5.0.tgz#57d074afdd0c2f6a02d77d18a19b18a08e4acdc4"
@@ -2365,12 +2349,12 @@
     state-container "1.5.0"
     styled-components "^5.3.0"
 
-"@gmsoft/dva-global-context-plugin@1.10.0":
-  version "1.10.0"
-  resolved "http://192.168.2.10:8081/repository/npm.gm/@gmsoft/dva-global-context-plugin/-/dva-global-context-plugin-1.10.0.tgz#03ee27d81747cfb358d1fec8ee4349ab8f79154b"
-  integrity sha512-2Owtkct+9h/naPNwwaJ3o2QihsM9ZW+PmfhcIF/U9cEakfeBg/48bhpipGSs+hxKJPda5s9Lzw0S/ixtVlDFiw==
+"@gmsoft/dva-global-context-plugin@1.11.0":
+  version "1.11.0"
+  resolved "http://192.168.2.10:8081/repository/npm.gm/@gmsoft/dva-global-context-plugin/-/dva-global-context-plugin-1.11.0.tgz#28790f318fac5cbd24b70dd720d0234611abf069"
+  integrity sha512-deeyWWNhLcPe1ncTLBr1r3ttY4Aolgjxh2NTTC13D6JGuDzpeZ4IoXiiiXA4ELiTa20RcToJl/IB3x6jCUb+mA==
   dependencies:
-    "@gmsoft/auth-sdk" "1.1.0"
+    "@gmsoft/auth-sdk" "1.9.0"
     react-redux "7.1.0"
 
 "@gmsoft/dva-theme-plugin@1.4.0":
@@ -19714,12 +19698,12 @@ stat-mode@^0.2.0:
   resolved "http://192.168.2.10:8081/repository/npm.gm/stat-mode/-/stat-mode-0.2.2.tgz#e6c80b623123d7d80cf132ce538f346289072502"
   integrity sha1-5sgLYjEj19gM8TLOU480YokHJQI=
 
-state-container@1.5.0, state-container@1.6.0:
-  version "1.6.0"
-  resolved "http://192.168.2.10:8081/repository/npm.gm/state-container/-/state-container-1.6.0.tgz#97b1942b716fabe817c7588ddfaa3c717c36d604"
-  integrity sha512-2XCZLM+rmjzTFZrNt+B7KgZFIMS1eLgyoM1u9n5QflJjoJWiO7meBELxYZLWPokvWF8aKfgU5kxNIchy/hDsYA==
+state-container@1.5.0, state-container@1.7.0:
+  version "1.7.0"
+  resolved "http://192.168.2.10:8081/repository/npm.gm/state-container/-/state-container-1.7.0.tgz#7580578d964d63cf45e927f51e44a7fc48913d92"
+  integrity sha512-cTGlnVbASXUNWLJKaw2gSpI/aIIk5B5RfJLIgQn4O1qeDtSLZmXMfKd1Jd0+8cXCRib9a2uO/AbsMo7doPHRYA==
   dependencies:
-    "@gmsoft/dva-global-context-plugin" "1.10.0"
+    "@gmsoft/dva-global-context-plugin" "1.11.0"
     "@gmsoft/dva-theme-plugin" "1.4.0"
     dva "^2.4.1"
     dva-core "^2.0.1"

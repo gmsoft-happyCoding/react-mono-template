@@ -25,6 +25,6 @@
   },
   "resolutions": {
     "ansi-styles": "^3.2.0",
-    "state-container": "1.6.0"
+    "state-container": "1.7.0"
   }
 }
