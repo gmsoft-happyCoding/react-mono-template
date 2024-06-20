@@ -8,7 +8,7 @@
     "genapi": "stormrage genapi"
   },
   "dependencies": {
-    "@gmsoft/auth-sdk": "1.9.0",
+    "@gmsoft/auth-sdk": "1.9.1",
     "@gmsoft/event-bus": "1.4.0",
     "@gmsoft/ui": "^1.14.1",
     "axios": "0.24.0",
@@ -23,7 +23,7 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "5.2.0",
     "redux": "^4.0.1",
-    "state-container": "1.7.0"
+    "state-container": "1.7.1"
   },
   "devDependencies": {
     "@types/jest": "23.3.10",
