@@ -8,7 +8,7 @@
     "genapi": "stormrage genapi"
   },
   "dependencies": {
-    "@gmsoft/auth-sdk": "1.9.1",
+    "@gmsoft/auth-sdk": "1.9.2",
     "@gmsoft/event-bus": "1.4.0",
     "@gmsoft/ui": "^1.14.1",
     "axios": "0.24.0",
